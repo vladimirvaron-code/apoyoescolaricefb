@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aprendiendo Python: IF, FOR y su combinación</title>
+    <style>
+        body { background: #f7f7fa; font-family: 'Montserrat', Arial, sans-serif; color: #21233b; margin: 0; }
+        header {
+            background: linear-gradient(90deg, #b4d6fa 0%, #e2e4fa 100%);
+            padding: 2em 1em 1em 1em; text-align: center;
+            border-bottom-left-radius: 2em; border-bottom-right-radius: 2em;
+        }
+        .seccion { background: #f0f4ff; margin: 2em auto; max-width: 820px; border-radius: 1em; box-shadow: 0 0 16px 0 #b6c6f0; padding: 2em; }
+        h1, h2 { color: #4861a3; }
+        h3 { color: #5ca47d; margin-top: 20px; }
+        .codigo { background: #232325; color: #fff; padding: 1em; border-radius: 0.7em; font-size: 1.1em; overflow-x: auto; margin-bottom: 0.5em; font-family: 'Fira Mono', monospace; }
+        .explicacion { color: #21233b; margin-bottom: 1em; font-size: 1em; }
+        .actividad { background: #e6eafa; padding: 1em; border-radius: 0.7em; margin: 1em 0; }
+        footer { background: linear-gradient(90deg, #c5e6e6 0%, #e5e0ee 100%); text-align: center; padding: 1em 0; border-top-left-radius: 2em; border-top-right-radius: 2em; }
+        .iconos { text-align: center; }
+        .iconos img { height: 80px; margin: 8px 16px; }
+        .boton-evalua { display: inline-block; background: #9ba2fd; color: #fff; border: none; padding: 0.7em 1.5em; border-radius: 0.5em; font-size: 1em; cursor: pointer; margin-top: 6px; }
+        @media (max-width: 650px) { .seccion { padding: 0.7em; } .codigo { font-size: 0.97em; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="iconos">
+            <img src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/98faf178-59dc-418d-96ca-5938852bdffc.png" alt="Iconos Python y educación" />
+        </div>
+        <h1>Aprendiendo Python: IF, FOR y su combinación</h1>
+        <p>¡Descubre Python de forma sencilla y didáctica! Programar es divertido y tú puedes lograrlo.</p>
+    </header>
+
+    <section class="seccion">
+        <h2>🏠 Inicio</h2>
+        <p>Python es un lenguaje muy sencillo y poderoso para quienes inician en la programación. Con el control de estructuras como <b>if</b> (decisión) y <b>for</b> (repetición), puedes crear programas inteligentes que resuelven problemas reales. ¡Aprender programación es un reto emocionante!</p>
+    </section>
+
+    <section class="seccion">
+        <h2>🔹 Sección 1: IF en Python</h2>
+
+        <h3>¿Qué es una sentencia <b>if</b>?</h3>
+        <p>La sentencia <b>if</b> permite ejecutar una acción solo si cierta condición se cumple. Su sintaxis es simple:</p>
+        <div class="codigo">if condición:<br>&emsp;# Código que se ejecuta si la condición es verdadera</div>
+
+        <h3>10 Ejemplos prácticos</h3>
+        <div class="codigo">edad = 15<br>if edad >= 18:<br>&emsp;print("Eres mayor de edad.")<br>else:<br>&emsp;print("Eres menor de edad.")</div>
+        <div class="explicacion">Evalúa si una persona es mayor de edad.</div>
+
+        <div class="codigo">numero = 7<br>if numero > 0:<br>&emsp;print("El número es positivo.")<br>else:<br>&emsp;print("El número no es positivo.")</div>
+        <div class="explicacion">Verifica si el número dado es mayor que cero.</div>
+
+        <div class="codigo">edad_persona = 17<br>edad_minima = 13<br>if edad_persona >= edad_minima:<br>&emsp;print("Puedes entrar a la película.")<br>else:<br>&emsp;print("No puedes entrar.")</div>
+        <div class="explicacion">Solo permite entrada si la edad es suficiente.</div>
+
+        <div class="codigo">suma = 20<br>if suma > 10:<br>&emsp;print("La suma es mayor a 10.")</div>
+        <div class="explicacion">Imprime algo si la suma es mayor a diez.</div>
+
+        <div class="codigo">numero = 0<br>if numero == 0:<br>&emsp;print("Es cero.")<br>else:<br>&emsp;print("No es cero.")</div>
+        <div class="explicacion">Comprueba si el número es exactamente cero.</div>
+
+        <div class="codigo">temperatura = 12<br>if temperatura < 15:<br>&emsp;print("Hace frío hoy.")</div>
+        <div class="explicacion">Informa si la temperatura es menor a 15 grados.</div>
+
+        <div class="codigo">nota = 70<br>if nota >= 51:<br>&emsp;print("Aprobaste.")<br>else:<br>&emsp;print("Reprobaste.")</div>
+        <div class="explicacion">Evalúa si la nota es suficiente para aprobar.</div>
+
+        <div class="codigo">dia = "sábado"<br>if dia == "lunes":<br>&emsp;print("Inicio de semana.")<br>else:<br>&emsp;print("Es otro día.")</div>
+        <div class="explicacion">Verifica si el día es lunes.</div>
+
+        <div class="codigo">contraseña_ingresada = "python123"<br>contraseña_correcta = "python123"<br>if contraseña_ingresada == contraseña_correcta:<br>&emsp;print("Contraseña correcta.")<br>else:<br>&emsp;print("Contraseña incorrecta.")</div>
+        <div class="explicacion">Valida la contraseña ingresada.</div>
+
+        <div class="codigo">puntos = 85<br>if puntos > 80:<br>&emsp;print("¡Excelente resultado!")<br>else:<br>&emsp;print("Puedes mejorar.")</div>
+        <div class="explicacion">Evalúa si los puntos son excelentes.</div>
+
+    </section>
+
+    <section class="seccion">
+        <h2>🔹 Sección 2: FOR en Python</h2>
+        <h3>¿Qué es un bucle <b>for</b>?</h3>
+        <p>El bucle <b>for</b> permite repetir acciones varias veces. Te ayuda a automatizar acciones y trabajar con rangos de valores.</p>
+        <div class="codigo">for variable in rango:<br>&emsp;# Código a repetir</div>
+
+        <h3>10 Ejemplos prácticos</h3>
+        <div class="codigo">for i in range(1, 6):<br>&emsp;print(i)</div>
+        <div class="explicacion">Imprime los números del 1 al 5.</div>
+
+        <div class="codigo">nombre = "Ana"<br>for j in range(3):<br>&emsp;print(nombre)</div>
+        <div class="explicacion">Imprime el nombre tres veces.</div>
+
+        <div class="codigo">for i in range(2, 11, 2):<br>&emsp;print(i)</div>
+        <div class="explicacion">Imprime los números pares del 2 al 10.</div>
+
+        <div class="codigo">for persona in range(5):<br>&emsp;print("¡Hola!")</div>
+        <div class="explicacion">Saluda cinco veces.</div>
+
+        <div class="codigo">veces = 5<br>for _ in range(veces):<br>&emsp;print("Python")</div>
+        <div class="explicacion">Repite la palabra "Python" cinco veces.</div>
+
+        <div class="codigo">for i in range(10, 0, -1):<br>&emsp;print(i)</div>
+        <div class="explicacion">Muestra los números de 10 a 1 regresivamente.</div>
+
+        <div class="codigo">dias_semana = 7<br>for dia in range(1, dias_semana + 1):<br>&emsp;print("Día", dia)</div>
+        <div class="explicacion">Imprime un mensaje para cada día.</div>
+
+        <div class="codigo">edad = 16<br>repeticiones = 4<br>for _ in range(repeticiones):<br>&emsp;print("Tengo", edad, "años")</div>
+        <div class="explicacion">Imprime la edad cuatro veces.</div>
+
+        <div class="codigo">for numero in range(1, 4):<br>&emsp;print(numero * 2)</div>
+        <div class="explicacion">Muestra el doble de cada valor de 1 a 3.</div>
+
+        <div class="codigo">for i in range(5):<br>&emsp;print("Línea", i + 1)</div>
+        <div class="explicacion">Imprime cinco líneas numeradas del 1 al 5.</div>
+
+    </section>
+
+    <section class="seccion">
+        <h2>🔹 Sección 3: FOR e IF juntos</h2>
+        <p>Combinar <b>for</b> e <b>if</b> permite analizar datos repetidos y tomar decisiones en cada ciclo.</p>
+
+        <h3>10 Ejemplos prácticos</h3>
+        <div class="codigo">for n in range(1, 11):<br>&emsp;if n % 2 == 0:<br>&emsp;&emsp;print(n)</div>
+        <div class="explicacion">Solo imprime números pares.</div>
+
+        <div class="codigo">for m in range(1, 10):<br>&emsp;if m > 5:<br>&emsp;&emsp;print(m)</div>
+        <div class="explicacion">Imprime números del 6 al 9.</div>
+
+        <div class="codigo">for i in range(1, 6):<br>&emsp;if i == 3:<br>&emsp;&emsp;print("Encontré el 3")<br>&emsp;else:<br>&emsp;&emsp;print("Número:", i)</div>
+        <div class="explicacion">Busca el número 3 en el rango del 1 al 5.</div>
+
+        <div class="codigo">for i in range(1, 8):<br>&emsp;if i < 4:<br>&emsp;&emsp;print("Bajo:", i)</div>
+        <div class="explicacion">Imprime solo números menores a 4.</div>
+
+        <div class="codigo">for año in range(1998, 2003):<br>&emsp;if año > 2000:<br>&emsp;&emsp;print(año)</div>
+        <div class="explicacion">Expone los años mayores al 2000.</div>
+
+        <div class="codigo">limite = 2<br>for x in range(1, 6):<br>&emsp;if x > limite:<br>&emsp;&emsp;print(x)</div>
+        <div class="explicacion">Imprime números superiores al límite.</div>
+
+        <div class="codigo">for i in range(1, 6):<br>&emsp;if i % 2 == 1:<br>&emsp;&emsp;print("Impar:", i)</div>
+        <div class="explicacion">Imprime solo números impares.</div>
+
+        <div class="codigo">for temperatura in [8, 16, 12, 22, 18]:<br>&emsp;if temperatura > 15:<br>&emsp;&emsp;print("Clima cálido")<br>&emsp;else:<br>&emsp;&emsp;print("Clima frío")</div>
+        <div class="explicacion">Evalúa temperaturas individuales.</div>
+
+        <div class="codigo">limite = 5<br>for i in range(1, 8):<br>&emsp;if i > limite:<br>&emsp;&emsp;print("Mayor a", limite, ":", i)</div>
+        <div class="explicacion">Imprime valores superiores al límite.</div>
+
+        <div class="codigo">for numero in range(1, 6):<br>&emsp;if numero > 3:<br>&emsp;&emsp;print("Positivo")<br>&emsp;else:<br>&emsp;&emsp;print("Pequeño")</div>
+        <div class="explicacion">Clasifica números menores o mayores a 3.</div>
+    </section>
+
+    <section class="seccion">
+        <h2>🎓 Conclusiones y práctica</h2>
+        <p>¡Felicidades! Ahora dominas <b>if</b>, <b>for</b> y su combinación. Con práctica, puedes crear programas cada vez más inteligentes y útiles. Recuerda: la mejor forma de aprender programación es experimentando.</p>
+        <div class="actividad">
+            <b>Mini desafío:</b><br>
+            Crea un programa que use <b>for</b> e <b>if</b> para mostrar si los números del 1 al 10 son pares o impares.<br>
+            <button class="boton-evalua" onclick="verSolucion()">Ver solución</button>
+            <div id="ejemploSolucion" style="display:none;">
+                <div class="codigo">for numero in range(1, 11):<br>&emsp;if numero % 2 == 0:<br>&emsp;&emsp;print(numero, "es par")<br>&emsp;else:<br>&emsp;&emsp;print(numero, "es impar")</div>
+            </div>
+            <script>
+                function verSolucion() {
+                    document.getElementById("ejemploSolucion").style.display = "block";
+                }
+            </script>
+        </div>
+        <p style="color:#7ba3e2; font-size:1.05em; margin-top:1em;"><b>¡Sigue practicando y nunca temas equivocarte!</b> Cada error te acerca más a ser un experto en programación. Con Python, ¡el límite es tu imaginación!</p>
+    </section>
+
+    <footer>
+        <div class="iconos">
+            <img src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/98faf178-59dc-418d-96ca-5938852bdffc.png" alt="Iconos Python y educación" />
+        </div>
+        <span>Diseñado para estudiantes de secundaria • Python | IF | FOR</span>
+    </footer>
+</body>
+</html>
