@@ -14,14 +14,19 @@
         .seccion { background: #f0f4ff; margin: 2em auto; max-width: 820px; border-radius: 1em; box-shadow: 0 0 16px 0 #b6c6f0; padding: 2em; }
         h1, h2 { color: #4861a3; }
         h3 { color: #5ca47d; margin-top: 20px; }
-        .codigo { background: #232325; color: #fff; padding: 1em; border-radius: 0.7em; font-size: 1.1em; overflow-x: auto; margin-bottom: 0.5em; font-family: 'Fira Mono', monospace; }
-        .explicacion { color: #21233b; margin-bottom: 1em; font-size: 1em; }
+        .codigo { background: #232325; color: #fff; padding: 1em; border-radius: 0.7em; font-size: 1.1em; overflow-x: auto; margin-bottom: 0.5em; font-family: 'Fira Mono', monospace; word-wrap: break-word; white-space: pre-wrap; }
+        .ejemplo-bloque { margin: 1.5em 0; border-left: 4px solid #9ba2fd; padding-left: 1em; }
+        .boton-explicacion { display: inline-block; background: #7fb3e8; color: #fff; border: none; padding: 0.6em 1.2em; border-radius: 0.5em; font-size: 0.95em; cursor: pointer; margin-top: 0.5em; }
+        .boton-explicacion:hover { background: #5ca47d; }
+        .explicacion-detallada { background: #e6eafa; color: #21233b; padding: 1em; border-radius: 0.5em; margin-top: 0.8em; line-height: 1.6; display: none; }
+        .explicacion-detallada strong { color: #4861a3; }
         .actividad { background: #e6eafa; padding: 1em; border-radius: 0.7em; margin: 1em 0; }
         footer { background: linear-gradient(90deg, #c5e6e6 0%, #e5e0ee 100%); text-align: center; padding: 1em 0; border-top-left-radius: 2em; border-top-right-radius: 2em; }
         .iconos { text-align: center; }
         .iconos img { height: 80px; margin: 8px 16px; }
-        .boton-evalua { display: inline-block; background: #9ba2fd; color: #fff; border: none; padding: 0.7em 1.5em; border-radius: 0.5em; font-size: 1em; cursor: pointer; margin-top: 6px; }
-        @media (max-width: 650px) { .seccion { padding: 0.7em; } .codigo { font-size: 0.97em; } }
+        .boton-solucion { display: inline-block; background: #9ba2fd; color: #fff; border: none; padding: 0.7em 1.5em; border-radius: 0.5em; font-size: 1em; cursor: pointer; margin-top: 6px; }
+        .boton-solucion:hover { background: #7fb3e8; }
+        @media (max-width: 650px) { .seccion { padding: 0.7em; } .codigo { font-size: 0.95em; } }
     </style>
 </head>
 <body>
@@ -43,38 +48,180 @@
 
         <h3>¿Qué es una sentencia <b>if</b>?</h3>
         <p>La sentencia <b>if</b> permite ejecutar una acción solo si cierta condición se cumple. Su sintaxis es simple:</p>
-        <div class="codigo">if condición:<br>&emsp;# Código que se ejecuta si la condición es verdadera</div>
+        <div class="codigo">if condición:
+    # Código que se ejecuta si la condición es verdadera</div>
 
         <h3>10 Ejemplos prácticos</h3>
-        <div class="codigo">edad = 15<br>if edad >= 18:<br>&emsp;print("Eres mayor de edad.")<br>else:<br>&emsp;print("Eres menor de edad.")</div>
-        <div class="explicacion">Evalúa si una persona es mayor de edad.</div>
 
-        <div class="codigo">numero = 7<br>if numero > 0:<br>&emsp;print("El número es positivo.")<br>else:<br>&emsp;print("El número no es positivo.")</div>
-        <div class="explicacion">Verifica si el número dado es mayor que cero.</div>
+        <!-- Ejemplo 1 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">edad = 15
+if edad >= 18:
+    print("Eres mayor de edad.")
+else:
+    print("Eres menor de edad.")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define la variable <strong>edad = 15</strong><br>
+                2. El if comprueba si <strong>edad >= 18</strong> (¿15 es mayor o igual a 18?)<br>
+                3. Como la respuesta es NO (falso), se ejecuta el <strong>else</strong><br>
+                4. Por eso imprime: "Eres menor de edad."
+            </div>
+        </div>
 
-        <div class="codigo">edad_persona = 17<br>edad_minima = 13<br>if edad_persona >= edad_minima:<br>&emsp;print("Puedes entrar a la película.")<br>else:<br>&emsp;print("No puedes entrar.")</div>
-        <div class="explicacion">Solo permite entrada si la edad es suficiente.</div>
+        <!-- Ejemplo 2 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">numero = 7
+if numero > 0:
+    print("El número es positivo.")
+else:
+    print("El número no es positivo.")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>numero = 7</strong><br>
+                2. El if pregunta: ¿<strong>7 > 0</strong>?<br>
+                3. La respuesta es SÍ (verdadero)<br>
+                4. Se ejecuta la primera instrucción: "El número es positivo."
+            </div>
+        </div>
 
-        <div class="codigo">suma = 20<br>if suma > 10:<br>&emsp;print("La suma es mayor a 10.")</div>
-        <div class="explicacion">Imprime algo si la suma es mayor a diez.</div>
+        <!-- Ejemplo 3 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">edad_persona = 17
+edad_minima = 13
+if edad_persona >= edad_minima:
+    print("Puedes entrar a la película.")
+else:
+    print("No puedes entrar.")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>edad_persona = 17</strong> y <strong>edad_minima = 13</strong><br>
+                2. El if comprueba: ¿<strong>17 >= 13</strong>?<br>
+                3. La respuesta es SÍ (verdadero)<br>
+                4. Imprime: "Puedes entrar a la película."
+            </div>
+        </div>
 
-        <div class="codigo">numero = 0<br>if numero == 0:<br>&emsp;print("Es cero.")<br>else:<br>&emsp;print("No es cero.")</div>
-        <div class="explicacion">Comprueba si el número es exactamente cero.</div>
+        <!-- Ejemplo 4 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">suma = 20
+if suma > 10:
+    print("La suma es mayor a 10.")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>suma = 20</strong><br>
+                2. El if comprueba: ¿<strong>20 > 10</strong>?<br>
+                3. La respuesta es SÍ (verdadero)<br>
+                4. Se ejecuta la instrucción: "La suma es mayor a 10."<br>
+                5. Nota: No hay <strong>else</strong>, así que si fuera falso no haría nada
+            </div>
+        </div>
 
-        <div class="codigo">temperatura = 12<br>if temperatura < 15:<br>&emsp;print("Hace frío hoy.")</div>
-        <div class="explicacion">Informa si la temperatura es menor a 15 grados.</div>
+        <!-- Ejemplo 5 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">numero = 0
+if numero == 0:
+    print("Es cero.")
+else:
+    print("No es cero.")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>numero = 0</strong><br>
+                2. El if pregunta: ¿<strong>numero == 0</strong>? (¿es igual a cero?)<br>
+                3. La respuesta es SÍ (verdadero)<br>
+                4. Imprime: "Es cero."<br>
+                5. Nota: El operador <strong>==</strong> comprueba si dos valores son iguales
+            </div>
+        </div>
 
-        <div class="codigo">nota = 70<br>if nota >= 51:<br>&emsp;print("Aprobaste.")<br>else:<br>&emsp;print("Reprobaste.")</div>
-        <div class="explicacion">Evalúa si la nota es suficiente para aprobar.</div>
+        <!-- Ejemplo 6 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">temperatura = 12
+if temperatura < 15:
+    print("Hace frío hoy.")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>temperatura = 12</strong><br>
+                2. El if comprueba: ¿<strong>12 < 15</strong>? (¿12 es menor a 15?)<br>
+                3. La respuesta es SÍ (verdadero)<br>
+                4. Se ejecuta: "Hace frío hoy."
+            </div>
+        </div>
 
-        <div class="codigo">dia = "sábado"<br>if dia == "lunes":<br>&emsp;print("Inicio de semana.")<br>else:<br>&emsp;print("Es otro día.")</div>
-        <div class="explicacion">Verifica si el día es lunes.</div>
+        <!-- Ejemplo 7 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">nota = 70
+if nota >= 51:
+    print("Aprobaste.")
+else:
+    print("Reprobaste.")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>nota = 70</strong><br>
+                2. El if pregunta: ¿<strong>70 >= 51</strong>? (¿70 es mayor o igual a 51?)<br>
+                3. La respuesta es SÍ (verdadero)<br>
+                4. Imprime: "Aprobaste."
+            </div>
+        </div>
 
-        <div class="codigo">contraseña_ingresada = "python123"<br>contraseña_correcta = "python123"<br>if contraseña_ingresada == contraseña_correcta:<br>&emsp;print("Contraseña correcta.")<br>else:<br>&emsp;print("Contraseña incorrecta.")</div>
-        <div class="explicacion">Valida la contraseña ingresada.</div>
+        <!-- Ejemplo 8 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">dia = "sábado"
+if dia == "lunes":
+    print("Inicio de semana.")
+else:
+    print("Es otro día.")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>dia = "sábado"</strong> (una cadena de texto)<br>
+                2. El if comprueba: ¿<strong>dia == "lunes"</strong>?<br>
+                3. "sábado" no es igual a "lunes", respuesta es NO (falso)<br>
+                4. Se ejecuta el <strong>else</strong>: "Es otro día."
+            </div>
+        </div>
 
-        <div class="codigo">puntos = 85<br>if puntos > 80:<br>&emsp;print("¡Excelente resultado!")<br>else:<br>&emsp;print("Puedes mejorar.")</div>
-        <div class="explicacion">Evalúa si los puntos son excelentes.</div>
+        <!-- Ejemplo 9 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">contraseña_ingresada = "python123"
+contraseña_correcta = "python123"
+if contraseña_ingresada == contraseña_correcta:
+    print("Contraseña correcta.")
+else:
+    print("Contraseña incorrecta.")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se definen dos variables con contraseñas<br>
+                2. El if comprueba: ¿<strong>contraseña_ingresada == contraseña_correcta</strong>?<br>
+                3. Ambas son "python123", respuesta es SÍ (verdadero)<br>
+                4. Imprime: "Contraseña correcta."
+            </div>
+        </div>
+
+        <!-- Ejemplo 10 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">puntos = 85
+if puntos > 80:
+    print("¡Excelente resultado!")
+else:
+    print("Puedes mejorar.")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>puntos = 85</strong><br>
+                2. El if pregunta: ¿<strong>85 > 80</strong>?<br>
+                3. La respuesta es SÍ (verdadero)<br>
+                4. Imprime: "¡Excelente resultado!"
+            </div>
+        </div>
 
     </section>
 
@@ -82,38 +229,160 @@
         <h2>🔹 Sección 2: FOR en Python</h2>
         <h3>¿Qué es un bucle <b>for</b>?</h3>
         <p>El bucle <b>for</b> permite repetir acciones varias veces. Te ayuda a automatizar acciones y trabajar con rangos de valores.</p>
-        <div class="codigo">for variable in rango:<br>&emsp;# Código a repetir</div>
+        <div class="codigo">for variable in rango:
+    # Código a repetir</div>
 
         <h3>10 Ejemplos prácticos</h3>
-        <div class="codigo">for i in range(1, 6):<br>&emsp;print(i)</div>
-        <div class="explicacion">Imprime los números del 1 al 5.</div>
 
-        <div class="codigo">nombre = "Ana"<br>for j in range(3):<br>&emsp;print(nombre)</div>
-        <div class="explicacion">Imprime el nombre tres veces.</div>
+        <!-- Ejemplo 1 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for i in range(1, 6):
+    print(i)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. El bucle inicia con <strong>i</strong> desde 1<br>
+                2. <strong>range(1, 6)</strong> genera números del 1 al 5<br>
+                3. En cada repetición, imprime el valor de <strong>i</strong><br>
+                4. Resultado: Se imprime 1, 2, 3, 4, 5
+            </div>
+        </div>
 
-        <div class="codigo">for i in range(2, 11, 2):<br>&emsp;print(i)</div>
-        <div class="explicacion">Imprime los números pares del 2 al 10.</div>
+        <!-- Ejemplo 2 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">nombre = "Ana"
+for j in range(3):
+    print(nombre)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>nombre = "Ana"</strong><br>
+                2. <strong>range(3)</strong> genera los números 0, 1, 2 (3 repeticiones)<br>
+                3. En cada repetición, imprime el nombre<br>
+                4. Resultado: Se imprime "Ana" tres veces
+            </div>
+        </div>
 
-        <div class="codigo">for persona in range(5):<br>&emsp;print("¡Hola!")</div>
-        <div class="explicacion">Saluda cinco veces.</div>
+        <!-- Ejemplo 3 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for i in range(2, 11, 2):
+    print(i)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. <strong>range(2, 11, 2)</strong> genera números comenzando en 2, hasta 10, saltando de 2 en 2<br>
+                2. Los números generados son: 2, 4, 6, 8, 10<br>
+                3. En cada repetición, imprime el número<br>
+                4. Resultado: Se imprime cada número par del 2 al 10
+            </div>
+        </div>
 
-        <div class="codigo">veces = 5<br>for _ in range(veces):<br>&emsp;print("Python")</div>
-        <div class="explicacion">Repite la palabra "Python" cinco veces.</div>
+        <!-- Ejemplo 4 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for persona in range(5):
+    print("¡Hola!")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. <strong>range(5)</strong> genera 5 números (0, 1, 2, 3, 4)<br>
+                2. El bucle se repite 5 veces<br>
+                3. En cada repetición, imprime "¡Hola!"<br>
+                4. Resultado: Se imprime "¡Hola!" cinco veces
+            </div>
+        </div>
 
-        <div class="codigo">for i in range(10, 0, -1):<br>&emsp;print(i)</div>
-        <div class="explicacion">Muestra los números de 10 a 1 regresivamente.</div>
+        <!-- Ejemplo 5 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">veces = 5
+for _ in range(veces):
+    print("Python")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>veces = 5</strong><br>
+                2. <strong>range(veces)</strong> genera 5 repeticiones<br>
+                3. La variable <strong>_</strong> se usa cuando no necesitamos su valor<br>
+                4. En cada repetición, imprime "Python"<br>
+                5. Resultado: Se imprime "Python" cinco veces
+            </div>
+        </div>
 
-        <div class="codigo">dias_semana = 7<br>for dia in range(1, dias_semana + 1):<br>&emsp;print("Día", dia)</div>
-        <div class="explicacion">Imprime un mensaje para cada día.</div>
+        <!-- Ejemplo 6 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for i in range(10, 0, -1):
+    print(i)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. <strong>range(10, 0, -1)</strong> genera números de 10 hasta 1, disminuyendo de 1 en 1<br>
+                2. El -1 significa que va hacia atrás (regresivo)<br>
+                3. Los números son: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1<br>
+                4. Resultado: Se imprime la cuenta regresiva de 10 a 1
+            </div>
+        </div>
 
-        <div class="codigo">edad = 16<br>repeticiones = 4<br>for _ in range(repeticiones):<br>&emsp;print("Tengo", edad, "años")</div>
-        <div class="explicacion">Imprime la edad cuatro veces.</div>
+        <!-- Ejemplo 7 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">dias_semana = 7
+for dia in range(1, dias_semana + 1):
+    print("Día", dia)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>dias_semana = 7</strong><br>
+                2. <strong>dias_semana + 1</strong> es 8, así que <strong>range(1, 8)</strong> genera del 1 al 7<br>
+                3. En cada repetición, imprime "Día" seguido del número<br>
+                4. Resultado: Se imprime Día 1, Día 2, ..., Día 7
+            </div>
+        </div>
 
-        <div class="codigo">for numero in range(1, 4):<br>&emsp;print(numero * 2)</div>
-        <div class="explicacion">Muestra el doble de cada valor de 1 a 3.</div>
+        <!-- Ejemplo 8 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">edad = 16
+repeticiones = 4
+for _ in range(repeticiones):
+    print("Tengo", edad, "años")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>edad = 16</strong> y <strong>repeticiones = 4</strong><br>
+                2. <strong>range(repeticiones)</strong> genera 4 repeticiones<br>
+                3. En cada repetición, imprime "Tengo 16 años"<br>
+                4. Resultado: Se imprime la frase 4 veces
+            </div>
+        </div>
 
-        <div class="codigo">for i in range(5):<br>&emsp;print("Línea", i + 1)</div>
-        <div class="explicacion">Imprime cinco líneas numeradas del 1 al 5.</div>
+        <!-- Ejemplo 9 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for numero in range(1, 4):
+    print(numero * 2)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. <strong>range(1, 4)</strong> genera los números 1, 2, 3<br>
+                2. En cada repetición, multiplica el número por 2<br>
+                3. Primera vuelta: 1 × 2 = 2<br>
+                4. Segunda vuelta: 2 × 2 = 4<br>
+                5. Tercera vuelta: 3 × 2 = 6<br>
+                6. Resultado: Se imprime 2, 4, 6
+            </div>
+        </div>
+
+        <!-- Ejemplo 10 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for i in range(5):
+    print("Línea", i + 1)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. <strong>range(5)</strong> genera 0, 1, 2, 3, 4<br>
+                2. En cada repetición, suma 1 al número (<strong>i + 1</strong>)<br>
+                3. Primera vuelta: 0 + 1 = 1<br>
+                4. Segunda vuelta: 1 + 1 = 2<br>
+                5. Y así sucesivamente...<br>
+                6. Resultado: Se imprime Línea 1, Línea 2, ..., Línea 5
+            </div>
+        </div>
 
     </section>
 
@@ -122,35 +391,170 @@
         <p>Combinar <b>for</b> e <b>if</b> permite analizar datos repetidos y tomar decisiones en cada ciclo.</p>
 
         <h3>10 Ejemplos prácticos</h3>
-        <div class="codigo">for n in range(1, 11):<br>&emsp;if n % 2 == 0:<br>&emsp;&emsp;print(n)</div>
-        <div class="explicacion">Solo imprime números pares.</div>
 
-        <div class="codigo">for m in range(1, 10):<br>&emsp;if m > 5:<br>&emsp;&emsp;print(m)</div>
-        <div class="explicacion">Imprime números del 6 al 9.</div>
+        <!-- Ejemplo 1 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for n in range(1, 11):
+    if n % 2 == 0:
+        print(n)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. El bucle for genera números del 1 al 10<br>
+                2. Para cada número, el if comprueba si es par (<strong>n % 2 == 0</strong>)<br>
+                3. Si es par, lo imprime; si es impar, no hace nada<br>
+                4. Resultado: Se imprime 2, 4, 6, 8, 10
+            </div>
+        </div>
 
-        <div class="codigo">for i in range(1, 6):<br>&emsp;if i == 3:<br>&emsp;&emsp;print("Encontré el 3")<br>&emsp;else:<br>&emsp;&emsp;print("Número:", i)</div>
-        <div class="explicacion">Busca el número 3 en el rango del 1 al 5.</div>
+        <!-- Ejemplo 2 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for m in range(1, 10):
+    if m > 5:
+        print(m)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. El bucle for genera números del 1 al 9<br>
+                2. Para cada número, el if comprueba si es mayor a 5<br>
+                3. Si es verdadero, lo imprime<br>
+                4. Resultado: Se imprime 6, 7, 8, 9
+            </div>
+        </div>
 
-        <div class="codigo">for i in range(1, 8):<br>&emsp;if i < 4:<br>&emsp;&emsp;print("Bajo:", i)</div>
-        <div class="explicacion">Imprime solo números menores a 4.</div>
+        <!-- Ejemplo 3 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for i in range(1, 6):
+    if i == 3:
+        print("Encontré el 3")
+    else:
+        print("Número:", i)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. El bucle for genera números del 1 al 5<br>
+                2. Para cada número, el if comprueba si es igual a 3<br>
+                3. Si es 3, imprime "Encontré el 3"<br>
+                4. Si no es 3, imprime "Número:" seguido del número<br>
+                5. Resultado: Número: 1, Número: 2, Encontré el 3, Número: 4, Número: 5
+            </div>
+        </div>
 
-        <div class="codigo">for año in range(1998, 2003):<br>&emsp;if año > 2000:<br>&emsp;&emsp;print(año)</div>
-        <div class="explicacion">Expone los años mayores al 2000.</div>
+        <!-- Ejemplo 4 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for i in range(1, 8):
+    if i < 4:
+        print("Bajo:", i)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. El bucle for genera números del 1 al 7<br>
+                2. Para cada número, el if comprueba si es menor a 4<br>
+                3. Si es menor a 4, lo imprime con "Bajo:"<br>
+                4. Resultado: Se imprime Bajo: 1, Bajo: 2, Bajo: 3
+            </div>
+        </div>
 
-        <div class="codigo">limite = 2<br>for x in range(1, 6):<br>&emsp;if x > limite:<br>&emsp;&emsp;print(x)</div>
-        <div class="explicacion">Imprime números superiores al límite.</div>
+        <!-- Ejemplo 5 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for año in range(1998, 2003):
+    if año > 2000:
+        print(año)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. El bucle for genera años del 1998 al 2002<br>
+                2. Para cada año, el if comprueba si es mayor a 2000<br>
+                3. Si es verdadero, lo imprime<br>
+                4. Resultado: Se imprime 2001, 2002
+            </div>
+        </div>
 
-        <div class="codigo">for i in range(1, 6):<br>&emsp;if i % 2 == 1:<br>&emsp;&emsp;print("Impar:", i)</div>
-        <div class="explicacion">Imprime solo números impares.</div>
+        <!-- Ejemplo 6 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">limite = 2
+for x in range(1, 6):
+    if x > limite:
+        print(x)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>limite = 2</strong><br>
+                2. El bucle for genera números del 1 al 5<br>
+                3. Para cada número, el if comprueba si es mayor al límite<br>
+                4. Si es mayor a 2, lo imprime<br>
+                5. Resultado: Se imprime 3, 4, 5
+            </div>
+        </div>
 
-        <div class="codigo">for temperatura in [8, 16, 12, 22, 18]:<br>&emsp;if temperatura > 15:<br>&emsp;&emsp;print("Clima cálido")<br>&emsp;else:<br>&emsp;&emsp;print("Clima frío")</div>
-        <div class="explicacion">Evalúa temperaturas individuales.</div>
+        <!-- Ejemplo 7 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for i in range(1, 6):
+    if i % 2 == 1:
+        print("Impar:", i)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. El bucle for genera números del 1 al 5<br>
+                2. Para cada número, el if comprueba si es impar (<strong>i % 2 == 1</strong>)<br>
+                3. Si el residuo de dividir entre 2 es 1, es impar<br>
+                4. Resultado: Se imprime Impar: 1, Impar: 3, Impar: 5
+            </div>
+        </div>
 
-        <div class="codigo">limite = 5<br>for i in range(1, 8):<br>&emsp;if i > limite:<br>&emsp;&emsp;print("Mayor a", limite, ":", i)</div>
-        <div class="explicacion">Imprime valores superiores al límite.</div>
+        <!-- Ejemplo 8 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for temperatura in [8, 16, 12, 22, 18]:
+    if temperatura > 15:
+        print("Clima cálido")
+    else:
+        print("Clima frío")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. El bucle for itera sobre cada temperatura<br>
+                2. Para cada temperatura, el if comprueba si es mayor a 15<br>
+                3. Si es mayor a 15, imprime "Clima cálido"<br>
+                4. Si no es mayor, imprime "Clima frío"<br>
+                5. Resultado: Clima frío, Clima cálido, Clima frío, Clima cálido, Clima cálido
+            </div>
+        </div>
 
-        <div class="codigo">for numero in range(1, 6):<br>&emsp;if numero > 3:<br>&emsp;&emsp;print("Positivo")<br>&emsp;else:<br>&emsp;&emsp;print("Pequeño")</div>
-        <div class="explicacion">Clasifica números menores o mayores a 3.</div>
+        <!-- Ejemplo 9 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">limite = 5
+for i in range(1, 8):
+    if i > limite:
+        print("Mayor a", limite, ":", i)</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. Se define <strong>limite = 5</strong><br>
+                2. El bucle for genera números del 1 al 7<br>
+                3. Para cada número, el if comprueba si es mayor a 5<br>
+                4. Si es mayor, imprime la frase con el número<br>
+                5. Resultado: Mayor a 5 : 6, Mayor a 5 : 7
+            </div>
+        </div>
+
+        <!-- Ejemplo 10 -->
+        <div class="ejemplo-bloque">
+            <div class="codigo">for numero in range(1, 6):
+    if numero > 3:
+        print("Positivo")
+    else:
+        print("Pequeño")</div>
+            <button class="boton-explicacion" onclick="toggleExplicacion(this)">📖 Ver explicación</button>
+            <div class="explicacion-detallada">
+                <strong>Paso a paso:</strong><br>
+                1. El bucle for genera números del 1 al 5<br>
+                2. Para cada número, el if comprueba si es mayor a 3<br>
+                3. Si es mayor a 3, imprime "Positivo"<br>
+                4. Si no es mayor a 3, imprime "Pequeño"<br>
+                5. Resultado: Pequeño, Pequeño, Pequeño, Positivo, Positivo
+            </div>
+        </div>
+
     </section>
 
     <section class="seccion">
@@ -159,15 +563,14 @@
         <div class="actividad">
             <b>Mini desafío:</b><br>
             Crea un programa que use <b>for</b> e <b>if</b> para mostrar si los números del 1 al 10 son pares o impares.<br>
-            <button class="boton-evalua" onclick="verSolucion()">Ver solución</button>
+            <button class="boton-solucion" onclick="verSolucion()">Ver solución</button>
             <div id="ejemploSolucion" style="display:none;">
-                <div class="codigo">for numero in range(1, 11):<br>&emsp;if numero % 2 == 0:<br>&emsp;&emsp;print(numero, "es par")<br>&emsp;else:<br>&emsp;&emsp;print(numero, "es impar")</div>
+                <div class="codigo">for numero in range(1, 11):
+    if numero % 2 == 0:
+        print(numero, "es par")
+    else:
+        print(numero, "es impar")</div>
             </div>
-            <script>
-                function verSolucion() {
-                    document.getElementById("ejemploSolucion").style.display = "block";
-                }
-            </script>
         </div>
         <p style="color:#7ba3e2; font-size:1.05em; margin-top:1em;"><b>¡Sigue practicando y nunca temas equivocarte!</b> Cada error te acerca más a ser un experto en programación. Con Python, ¡el límite es tu imaginación!</p>
     </section>
@@ -178,5 +581,27 @@
         </div>
         <span>Diseñado para estudiantes de secundaria • Python | IF | FOR</span>
     </footer>
+
+    <script>
+        function toggleExplicacion(button) {
+            const explicacion = button.nextElementSibling;
+            if (explicacion.style.display === "none" || explicacion.style.display === "") {
+                explicacion.style.display = "block";
+                button.textContent = "📖 Ocultar explicación";
+            } else {
+                explicacion.style.display = "none";
+                button.textContent = "📖 Ver explicación";
+            }
+        }
+
+        function verSolucion() {
+            const solucion = document.getElementById("ejemploSolucion");
+            if (solucion.style.display === "none" || solucion.style.display === "") {
+                solucion.style.display = "block";
+            } else {
+                solucion.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
